@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+npm ci && nx run-many --all --target=lint --parallel && nx format:check --configuration ./.prettierrc && nx run-many --target=test --all --parallel --skip-nx-cache
